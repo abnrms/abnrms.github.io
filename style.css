@@ -1,0 +1,145 @@
+:root {
+    --color-background: #d8e8ff;
+    --color-background-alt: #bbccff;
+    --color-background-alt2: #c0d0ee;
+    --color-text: #001133;
+    --color-text-alt: #2255cc;
+
+    --content-width: 800px;
+    --footer-width: 600px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #081028;
+        --color-background-alt: #113377;
+        --color-background-alt2: #112255;
+        --color-text: #f0f8ff;
+        --color-text-alt: #66bbff;
+    }
+}
+
+body {
+    color: var(--color-text);
+    background-color: var(--color-background);
+    font-family: Bahnschrift, Trebuchet MS, sans-serif;
+    font-size: 14pt;
+    margin: 0;
+}
+
+.centered {
+    text-align: center;
+}
+
+#header {
+    background-color: var(--color-background-alt);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#page-title {
+    margin: 0px;
+    text-wrap: nowrap;
+}
+
+#navbar {
+    display: flex;
+    gap: 20px;
+}
+
+#content {
+    max-width: var(--content-width);
+    margin: auto;
+}
+
+#profile {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    gap: 20px;
+}
+
+.shadow {
+    box-shadow: 0px 3px 10px #00000044;
+}
+
+#profile-picture {
+    width: 200px;
+    border-radius: 50%;
+}
+
+#profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+#profile-name, #profile-profession, #profile-extra {
+    margin: 0px;
+}
+
+#content-picture {
+    width: 300px;
+    float: right;
+    margin-left: 15px;
+}
+
+#footer {
+    background-color: var(--color-background-alt2);
+}
+
+#footer-content {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    gap: 50px;
+}
+
+#footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#footer-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-link__icon {
+    width: 50px;
+    height: 50px;
+}
+
+h1, h2, h3 {
+    font-family: Cascadia Mono, Courier New, monospace;
+    font-weight: bolder;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+h2 {
+    font-size: 20pt;
+}
+
+h3 {
+    font-size: 16pt;
+}
+
+p {
+    text-indent: 2em;
+    text-wrap: pretty;
+}
+
+.highlight {
+    color: var(--color-text-alt);
+}
