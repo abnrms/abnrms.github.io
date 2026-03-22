@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="style.css"/>
+        <title>Assignment 01 | Hamlet Taraz</title>
+    </head>
+    <body>
+        <header>
+            <h1>CSC 444 Assignment 01</h1>
+            <h2>Hamlet Taraz</h2>
+            <h3>September 10, 2025</h3>
+        </header>
+        <div>
+            <div class="chart">
+                <h2>Bar Charts</h2>
+                <div class="svgs">
+                    <svg id="yellow_bar_chart" width=400 height=400>
+                        <g transform="scale(1, -1) translate(0, -400)">
+                            <rect x=0 y=0 width=50 height=200 />
+                            <rect x=50 y=0 width=50 height=150 />
+                            <rect x=100 y=0 width=50 height=175 />
+                            <rect x=150 y=0 width=50 height=175 />
+                            <rect x=200 y=0 width=50 height=100 />
+                            <rect x=250 y=0 width=50 height=250 />
+                            <rect x=300 y=0 width=50 height=225 />
+                            <rect x=350 y=0 width=50 height=300 />
+                        </g>
+                    </svg>
+                    <svg id="teal_bar_chart" width=400 height=400>
+                        <g transform="scale(1, -1) translate(0, -400)">
+                            <rect x=0 y=0 width=50 height=200 />
+                            <rect x=50 y=0 width=50 height=150 />
+                            <rect x=100 y=0 width=50 height=175 />
+                            <rect x=150 y=0 width=50 height=175 />
+                            <rect x=200 y=0 width=50 height=100 />
+                            <rect x=250 y=0 width=50 height=250 />
+                            <rect x=300 y=0 width=50 height=225 />
+                            <rect x=350 y=0 width=50 height=300 />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="chart">
+                <h2>Line Charts</h2>
+                <div class="svgs">
+                    <svg id="line_line_chart" width=400 height=400>
+                        <g transform="scale(1, -1) translate(0, -400)">
+                            <line x1=25 y1=200 x2=75 y2=150 />
+                            <line x1=75 y1=150 x2=125 y2=175 />
+                            <line x1=125 y1=175 x2=175 y2=175 />
+                            <line x1=175 y1=175 x2=225 y2=100 />
+                            <line x1=225 y1=100 x2=275 y2=250 />
+                            <line x1=275 y1=250 x2=325 y2=225 />
+                            <line x1=325 y1=225 x2=375 y2=300 />
+                        </g>
+                    </svg>
+                    <svg id="path_line_chart" width=400 height=400>
+                        <g transform="scale(1, -1) translate(0, -400)">
+                            <path d="M 25 200 L 75 150 L 125 175 L 175 175 L 225 100 L 275 250 L 325 225 L 375 300" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="chart">
+                <h2>Pie Chart</h2>
+                <div class="svgs">
+                    <svg id="pie_chart" width=400 height=400>
+                        <path id="white_wedge" d="M 200 50 A 150 150 0 1 0 350 200 L 200 200 Z" />
+                        <path id="pink_wedge" d="M 200 50 A 150 150 0 0 1 350 200 L 200 200 Z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

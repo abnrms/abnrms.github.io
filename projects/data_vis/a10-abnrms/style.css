@@ -1,0 +1,48 @@
+/*
+ * File: style.css
+ * Author: Hamlet Taraz
+ * Purpose: Define general styles for index.html
+ */
+
+body {
+    background-color: #def;
+    font-family: Bahnschrift;
+}
+
+.outer {
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    background-color: #bcd;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    font-family: Bahnschrift;
+    font-size: 16px;
+}
+
+button, input[type="file"]::file-selector-button {
+    background-color: #ace;
+    font-family: Bahnschrift;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+svg {
+    background-color: white;
+    display: block;
+}
+
+text {
+    font-family: Bahnschrift;
+    font-size: 10pt;
+    fill: black;
+}

@@ -1,0 +1,84 @@
+/*
+ * File: style.css
+ * Author: Hamlet Taraz
+ * Purpose: Define general styles for index.html
+ */
+
+body {
+    background-color: #def;
+    font-family: Bahnschrift;
+}
+
+header {
+    background-color: #bcd;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0px 20px;
+    padding-top: 20px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3 {
+    margin-top: 0px;
+}
+
+.outer {
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    background-color: #bcd;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+svg {
+    background-color: white;
+    display: block;
+    border: 2px solid;
+}
+
+text {
+    font-family: Bahnschrift;
+    font-size: 10pt;
+    fill: black;
+}
+
+.label {
+    cursor: pointer;
+    transition: font-size 0.3s, fill 0.3s;
+}
+
+.label:hover {
+    fill: #025;
+    font-size: 12pt;
+}
+
+#legend svg {
+    margin: auto;
+}
+
+#checkboxes {
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    background-color: #def;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.checkbox {
+    width: fit-content;
+    display: flex;
+    gap: 5px;
+    margin: auto;
+}

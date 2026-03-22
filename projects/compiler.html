@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://abnrms.github.io/" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="source.js"></script>
+    <title>Hamlet Taraz | C to MIPS Compiler</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <script>loadHeader()</script>
+    <div id="title-container">
+        <h1>C to MIPS Compiler</h1>
+        <!-- <h2>C</h2> -->
+    </div>
+    <div id="content">
+        <p> This project was a compiler I wrote over the course of a semester as part of my Compilers course (CSC 453)
+            at the University of Arizona. Written completely in C using a Linux CLI (Vim editor), it translates a
+            programming language dubbed <span style="text-wrap: nowrap">"C--"</span> (a
+            significant subset of C functionality) into functionally identical MIPS assembly code. The full spec of the
+            C-- language can be found <a
+                href="https://www2.cs.arizona.edu/~debray/Teaching/CSc453/DOCS/cminusminusspec.html" target="_blank"
+                rel="noopener noreferrer">here.</a> In essence, this successfully compiles function calls, for
+            loops, conditionals, variable declarations, and arithmetic.
+        </p>
+        <img class="project-page-media shadow" src="projects/thumbnails/compiler.jpg" alt="Screenshot of C-- code and Compiled MIPS">
+        <p>
+            This project was developed through a pipeline of stages throughout the semester. I learned the principles of
+            compilation, starting with lexical analysis, then semantic analysis through symbol table management. We
+            covered intermediate represenatations, specifically abstract systax trees and three-address code. Finally,
+            we translated into completed MIPS code, ensuring functionality using the SPIM command-line tool.
+        </p>
+        <h2>Relevant Skills</h2>
+        <ul>
+            <li><strong class="hl">C:</strong> Coded entirely in C using the Vim text editor on Linux. It also required
+                a thorough understanding of the behind-the scenes functionality of C, as it was the source language of
+                compilation.</li>
+            <li><strong class="hl">MIPS Assembly:</strong> A thorough understanding of MIPS assembly was required to
+                replicate the functionality of primitive C operations.</li>
+            <li><strong class="hl">UNIX/Linux:</strong> I used Linux as my primary development environment for this
+                project. I used CLI tools such as SPIM and GCC to run C and MIPS code.</li>
+            <li><strong class="hl">Vim:</strong> I used Vim as the text editor for the entire project.</li>
+            <li><strong class="hl">Compilation:</strong> I employed knowledge about the foundational steps of
+                compilation while making this project.</li>
+        </ul>
+    </div>
+    <div id="footer"></div>
+    <script>loadFooter()</script>
+</body>
+
+</html>

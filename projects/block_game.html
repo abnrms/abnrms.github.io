@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://abnrms.github.io/" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="source.js"></script>
+    <title>Hamlet Taraz | 2D Block Game</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <script>loadHeader()</script>
+    <div id="title-container">
+        <h1>2D Block Game</h1>
+        <h2>C (SDL)</h2>
+    </div>
+    <div id="content">
+        <p>
+            This project was a simple 2D game I created as a part of my marketing work for Cloud Microphones, where
+            blocks (originally company products) rise and are placed across a grid to gain points. Some components of
+            the game include a fully functional nonvolatile local daily leaderboard system with arcade-style 3-letter
+            name input, a functional UI with design considerations modeled around joystick controls, grid "snapping" of
+            rising blocks when they clip an edge of another, and a scoring system which encourages complex setups and
+            punishes simple methods of play.
+        </p>
+        <video controls muted autoplay loop class="project-page-media shadow">
+            <source src="projects/media/block_game.mp4" type="video/mp4" />
+
+            Your browser does not support embedded mp4 videos. <a href="projects/media/block_game.mp4">Video Download
+                Link</a>
+        </video>
+        <p>
+            I developed this game independently, entirely with Visual Studio 2022 in C using the Simple DirectMedia
+            Layer (SDL) library to handle graphics interactions. Some responsibilities apart from simply making the game
+            functional included tweaking design considerations such as adding engaging main menu visuals while the game
+            is unplayed, eliminating memory leaks to ensure program functionality over long-term runs, and managing time
+            zone differences, since the trade show it was to be deployed at is in a different time zone. This game was
+            developed in a local environment using Visual Studio, but was deployed on a Raspberry Pi, completely
+            functional using USB-encoded joystick input and two arcade-style buttons (for selection and rotation).
+        </p>
+        <h2>Relevant Skills</h2>
+        <ul>
+            <li><strong class="hl">C:</strong> Coded entirely in C using Visual Studio 2022. I used C library functions to handle low-level
+                considerations such as memory leak management, system time, and file I/O.</li>
+            <li><strong class="hl">Simple DirectMedia Layer (SDL):</strong> I used this graphics library to create this project. I used it to
+                navigate event handling, along with creating and placing the shapes and textures in the game.</li>
+            <li><strong class="hl">Raspberry Pi:</strong> This project was deployed on a Raspberry Pi; I set up the device, navigated the OS, and
+                made small changes through a Raspberry Pi text editor.</li>
+            <li><strong class="hl">GitHub:</strong> Although this was a solo development project, I used GitHub as a primary method of transitioning
+                between my local development environment and the Raspberry Pi.</li>
+        </ul>
+    </div>
+    <div id="footer"></div>
+    <script>loadFooter()</script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+/*
+ * File: style.css
+ * Author: Hamlet Taraz
+ * Purpose: Define general styles for index.html
+ */
+
+body {
+    font-family: Bahnschrift;
+}
+
+header {
+    text-align: center;
+    border: 2px solid;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0px 20px;
+    padding-top: 20px;
+    margin: auto;
+}
+
+div {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0px;
+    width: fit-content;
+}
+
+h1, h2 {
+    margin-top: 0px;
+}
+
+svg {
+    background-color: #fee;
+    display: block;
+}
+
+#scatterplot2 {
+    background-color: white; /* don't like the pink here! */
+}
+
+p {
+    width: 500px;
+    margin-bottom: 0px;
+    text-indent: 1em;
+}

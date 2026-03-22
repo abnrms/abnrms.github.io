@@ -2,14 +2,18 @@
 
 :root {
     --color-background: #d8e8ff;
-    --color-background-alt: #bbccff;
-    --color-background-alt2: #c0d0ee;
+    --color-background-alt: #bbd8ff;
+    --color-background-alt2: #c3dbff;
+    --color-background-darker: #8babf0;
     --color-text: #001133;
     --color-text-alt: #2255cc;
 
     --color-text-invert: #f0f8ff;
-    --color-background-invert: #081028;
-    --color-background-invert-transparent: #081028bb;
+    --color-background-invert: #1f2d55;
+    --color-background-invert-highlighted: #263d7a;
+    --color-background-invert-transparent: #1f2d55bb;
+    --color-background-invert-bluer: #2c4fb1;
+    --color-background-invert-bluer-highlighted: #3963d7;
 
     --content-width: 700px;
     --footer-width: 600px;
@@ -21,12 +25,16 @@
         --color-background: #081028;
         --color-background-alt: #113377;
         --color-background-alt2: #112255;
+        --color-background-darker: #00020d;
         --color-text: #f0f8ff;
         --color-text-alt: #66bbff;
 
         --color-text-invert: #001133;
-        --color-background-invert: #8ab2ea;
-        --color-background-invert-transparent: #8ab2eabb;
+        --color-background-invert: #a0bce3;
+        --color-background-invert-highlighted: #b0cef4;
+        --color-background-invert-transparent: #a0bce3bb;
+        --color-background-invert-bluer: #5d97e7;
+        --color-background-invert-bluer-highlighted: #74aef9;
     }
 }
 
@@ -62,7 +70,20 @@ p {
     text-wrap: pretty;
 }
 
-.highlight {
+ul, ol {
+    padding-left: 1.2em;
+}
+
+li {
+    margin: 10px 0px;
+    padding-left: 0.8em;
+}
+
+li::marker {
+    content: "›";
+}
+
+.hl {
     color: var(--color-text-alt);
 }
 
@@ -84,6 +105,7 @@ p {
 #page-title {
     margin: 0px;
     text-wrap: nowrap;
+    overflow: hidden;
 }
 
 #navbar {
@@ -97,7 +119,7 @@ p {
 .navbar__button, .footer-nav__button {
     color: var(--color-text);
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .navbar__button:hover, .footer-nav__button:hover {
@@ -154,7 +176,7 @@ p {
 .svg-fill {
     fill: var(--color-text);
     stroke: none;
-    transition: fill 0.3s ease, transform 0.3s ease;
+    transition: fill 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .svg-fill:hover {
@@ -165,7 +187,7 @@ p {
 .svg-stroke {
     stroke: var(--color-text);
     fill: none;
-    transition: stroke 0.3s ease, transform 0.3s ease;
+    transition: stroke 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .svg-stroke:hover {
@@ -179,6 +201,15 @@ p {
     max-width: var(--content-width);
     margin: auto;
     padding: 0px 20px;
+}
+
+#content p a {
+    color: var(--color-text-alt);
+    text-decoration: none;
+}
+
+#content p a:hover {
+    text-decoration: underline;
 }
 
 /* Profile (Home Page) */
@@ -206,6 +237,10 @@ p {
     margin: 0px;
 }
 
+#profile-extra {
+    transition: opacity 0.5s ease-out;
+}
+
 /* Single Images */
 
 #image-graduate {
@@ -215,13 +250,14 @@ p {
 }
 
 #handshake-wrapper {
-    background-color: black;
+    background-color: var(--color-background-darker);
 }
 
 #image-handshake {
     display: block;
     width: var(--content-width);
     margin: auto;
+    max-width: 100%;
 }
 
 #gif-game-showcase {
@@ -252,22 +288,13 @@ p {
     margin: 0px;
 }
 
-/* Projects Page */
+#title-container h2 {
+    font-size: 32pt;
+    margin: 0px;
+    margin-top: 5px;
+}
 
-/*
-    <div class="project-wrapper">
-        <a class="project-card" href="[href]">
-            <h2 class="project-title">[title]</h2>
-            <h3 class="project-language">[language]</h3>
-            <img class="project-thumbnail" src="[path]" />
-        </a>
-        <p class="project-description">[description]</p>
-        <div class="project-tag-list">
-            <div class="project-tag">[tag]</div>
-            ...
-        </div>
-    </div>
-*/
+/* Projects Page */
 
 #project-list {
     max-width: var(--projects-width);
@@ -288,6 +315,12 @@ p {
     border-radius: 10px;
     padding: 10px;
     text-decoration: none;
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.project-wrapper:hover {
+    background-color: var(--color-background-invert-highlighted);
+    transform: scale(1.02);
 }
 
 .project-card {
@@ -336,4 +369,48 @@ p {
     color: var(--color-text);
     padding: 5px;
     border-radius: 5px;
+}
+
+/* Individual project page */
+
+.project-page-media {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+.project-page-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0px;
+}
+
+.project-page-link {
+    background-color: var(--color-background-invert);
+    color: var(--color-text-invert);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.project-page-link:hover {
+    background-color: var(--color-background-invert-highlighted);
+    transform: scale(1.04);
+}
+
+.project-page-link-highlight {
+    background-color: var(--color-background-invert-bluer);
+    color: var(--color-text-invert);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.project-page-link-highlight:hover {
+    background-color: var(--color-background-invert-bluer-highlighted);
+    transform: scale(1.04);
 }

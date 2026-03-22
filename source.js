@@ -1,7 +1,7 @@
 function loadHeader() {
     let header = document.getElementById("header")
     header.innerHTML = `
-    <h1 id="page-title">Hamlet Taraz | <span class="highlight">Software Developer</span></h1>
+    <h1 id="page-title">Hamlet Taraz | <span class="hl">Software Developer</span></h1>
     <div id="navbar">
         <a class="navbar__button" href="index.html">Home</a>
         <a class="navbar__button" href="about.html">About</a>
@@ -61,27 +61,30 @@ var projects = [
         tags: [
             "C",
             "Simple DirectMedia Layer (SDL)",
-            "Raspberry Pi"
+            "Raspberry Pi",
+            "GitHub"
         ],
-        description: "A simple game where blocks rise and placed across a grid to gain points. Includes a daily-resetting local leaderboard, a dynamic menu, and can be controlled through USB Joystick input. Was originally deployed on a Raspberry Pi."
+        description: "A simple game where blocks rise and are placed across a grid to gain points. Includes a daily-resetting local leaderboard, a dynamic menu, and can be controlled through USB Joystick input. Was originally deployed on a Raspberry Pi."
     },
     {
-        title: "C to MIPS Compiler",
-        language: "C",
-        thumbnail_path: "projects/thumbnails/compiler.jpg",
-        href: "projects/compiler.html",
+        title: "Cloud Mics Website",
+        language: "Shopify",
+        thumbnail_path: "projects/thumbnails/cloud_site.jpg",
+        href: "projects/cloud_site.html",
         tags: [
-            "C",
-            "MIPS Assembly",
-            "Compiler",
-            "Unix",
-            "Vim"
+            "Shopify",
+            "Liquid",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Collaborative",
+            "E-Commerce"
         ],
-        description: "A compiler written in C which translates a subset of C programs into a functional MIPS assembly equivalent. Supports conditional statements, loops, and function calls. Coded entirely in the Unix CLI using Vim." // Considers the main steps of compilation, including lexical and semantic analysis, abstract syntax trees, and three-address code.
+        description: "A website developed through Shopify in a team of 3. Provides an e-commerce marketplace for different audio products. Required editing code directly to surpass editor capabilities."
     },
     {
         title: "Data Visualizations",
-        language: "HTML, CSS, JS (D3.js)",
+        language: "JS (D3.js), HTML, CSS",
         thumbnail_path: "projects/thumbnails/data_vis.jpg",
         href: "projects/data_vis.html",
         tags: [
@@ -94,6 +97,20 @@ var projects = [
         description: "A suite of Data Visualizations with varying levels of complexity. Covers topics such as volumetric rendering, parallel coordinates, and scatterplots, all with dynamic interaction."
     },
     {
+        title: "C to MIPS Compiler",
+        language: "C",
+        thumbnail_path: "projects/thumbnails/compiler.jpg",
+        href: "projects/compiler.html",
+        tags: [
+            "C",
+            "MIPS Assembly",
+            "UNIX/Linux",
+            "Vim",
+            "Compilation"
+        ],
+        description: "A compiler written in C which translates a subset of C programs into a functional MIPS assembly equivalent. Supports conditional statements, loops, and function calls. Coded entirely in the Unix CLI using Vim." // Considers the main steps of compilation, including lexical and semantic analysis, abstract syntax trees, and three-address code.
+    },
+    {
         title: "UNO Card Game",
         language: "Java (Swing)",
         thumbnail_path: "projects/thumbnails/uno_game.jpg",
@@ -101,11 +118,13 @@ var projects = [
         tags: [
             "Java",
             "Swing",
-            "Object-Oriented Programming",
-            "Collaborative"
+            "UML",
+            "JUnit",
+            "GitHub",
+            "Object-Oriented Design"
         ],
         description: "GUI-based 2-4 player card game replicating the functionality of UNO. Focused on object-oriented principles and patterns. Created in a team of 4."
-    }
+    },
 ]
 
 /*
@@ -130,7 +149,7 @@ function loadProjects() {
     for (project of projects) {
         let wrapper = document.createElement("a")
         wrapper.classList.add("project-wrapper")
-        // wrapper.href = project.href
+        wrapper.href = project.href
         project_list.appendChild(wrapper)
 
         let card = document.createElement("div")
@@ -173,4 +192,35 @@ function loadProjects() {
             tag_list.appendChild(tag)
         }
     }
+}
+
+var extra_info_state = 1
+
+async function updateExtraInfo() {
+    let profile_extra = document.getElementById("profile-extra")
+    profile_extra.style["opacity"] = 0.0;
+    await new Promise(r => setTimeout(r, 500));
+    switch (extra_info_state) {
+        case 0:
+            profile_extra.innerText = "GPA: 3.95 / 4.0"
+            extra_info_state++
+            break
+        case 1:
+            profile_extra.innerText = "Bachelor's in CS"
+            extra_info_state++
+            break
+        case 2:
+            profile_extra.innerText = "University of Arizona"
+            extra_info_state++
+            break
+        case 3:
+            profile_extra.innerText = "Tucson, Arizona"
+            extra_info_state++
+            break
+        default:
+            profile_extra.innerText = "Undergraduate TA and RA"
+            extra_info_state = 0
+            break
+    }
+    profile_extra.style["opacity"] = 1.0;
 }

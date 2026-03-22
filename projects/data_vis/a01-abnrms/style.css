@@ -1,0 +1,69 @@
+body {
+    font-family: "Bahnschrift";
+}
+
+header {
+    text-align: center;
+    border: 2px solid;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0px 20px;
+    margin: auto;
+    background-color: lightgray;
+}
+
+.chart {
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: lightgray;
+    padding: 0px 20px;
+    margin: 10px 0px;
+}
+
+.svgs {
+    text-align: center;
+}
+
+svg {
+    background-color: white;
+    margin: 0px 10px;
+    margin-bottom: 10px;
+    filter: drop-shadow(5px 5px 5px #444444); /* This line came from the assignment spec source css!*/
+}
+
+#yellow_bar_chart {
+    fill: yellow;
+    stroke: black;
+    stroke-width: 2px;
+}
+
+#teal_bar_chart {
+    fill: teal;
+    stroke: white;
+    stroke-width: 2px;
+}
+
+#line_line_chart {
+    stroke: black;
+    stroke-width: 4px;
+}
+
+#path_line_chart {
+    fill: none;
+    stroke: black;
+    stroke-width: 4px;
+    stroke-dasharray: 10, 10;
+}
+
+#pie_chart {
+    stroke: black;
+    stroke-width: 3px;
+}
+
+#white_wedge {
+    fill: white;
+}
+
+#pink_wedge {
+    fill: hotpink;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://abnrms.github.io/" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="source.js"></script>
+    <title>Hamlet Taraz | Data Visualizations</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <script>loadHeader()</script>
+    <div id="title-container">
+        <h1>Data Visualizations</h1>
+        <h2>JavaScript (D3.js), HTML, CSS</h2>
+    </div>
+    <div id="content">
+        <p>
+            This is a suite of smaller projects; multiple visualizations of different datasets in the form of HTML pages
+            which I created during my Data Visualization course in my final semester at the University of Arizona. Many
+            of the visualizations have various interactions, manipulating the way the data is drawn to empahsize
+            different correlations. Through most, I used the D3.js library to handle accurate data plotting,
+            interactions, and transitions in the visualizations. Some specific data visualization topics I covered
+            through these projects are parallel coordinates, volumetric rendering, field and map visualizations,
+            scatterplots, etc.
+        </p>
+        <video controls muted autoplay loop class="project-page-media shadow">
+            <source src="projects/media/data_vis.mp4" type="video/mp4" />
+
+            Your browser does not support embedded mp4 videos. <a href="projects/media/data_vis.mp4">Video Download
+                Link</a>
+        </video>
+        <p>
+            Although basic empty templates were often provided by my professor, my JavaScript code handled all tasks
+            that involved creating the displayed visualization from the data. I also used CSS to edit styling and HTML
+            for small layout tweaks. Some interactions include both 1D and 2D brushing over datapoints, interactive 3D
+            object visualization, changing axes, and focus + context.
+        </p>
+        <div class="project-page-links">
+            <a class="project-page-link" href="projects/data_vis/a01-abnrms/index.html">Simple Static SVG Charts (Without D3.js)</a>
+            <a class="project-page-link" href="projects/data_vis/a02-abnrms/index.html">Static SVG Scatterplots (Without D3.js)</a>
+            <a class="project-page-link" href="projects/data_vis/a03-abnrms/index.html">Simple D3.js Graphics</a>
+            <a class="project-page-link" href="projects/data_vis/a04-abnrms/index.html">Dynamic Scatterplot</a>
+            <a class="project-page-link" href="projects/data_vis/a05-abnrms/index.html">Colormap Practice</a>
+            <a class="project-page-link-highlight" href="projects/data_vis/a06-abnrms/index.html">Dual Interactive Scatterplot (Try brushing over and selecting datapoints)</a>
+            <a class="project-page-link-highlight" href="projects/data_vis/a07-abnrms/index.html">Parallel Coordinates (Try brushing axes and clicking axis titles)</a>
+            <a class="project-page-link" href="projects/data_vis/a08-abnrms/index.html">Treemap Practice</a>
+            <a class="project-page-link" href="projects/data_vis/a09-abnrms/index.html">Contours (Marching Squares)</a>
+            <a class="project-page-link-highlight" href="projects/data_vis/a10-abnrms/index.html">3D Volumetric Visualization (Requires .vti file)</a>
+            <a class="project-page-link" href="projects/data_vis/a10-abnrms/datasets/tooth.vti" download>Download sample .vti file here!</a>
+        </div>
+        <h2>Relevant Skills</h2>
+        <ul>
+            <li><strong class="hl">HTML:</strong> These projects are all developed as HTML pages which serves as a base
+                for JavaScript code which generates the visualizations.</li>
+            <li><strong class="hl">CSS:</strong> These are styled using CSS (most of the time) to provide more usability
+                and user-friendly appearance.</li>
+            <li><strong class="hl">JavaScript:</strong> JavaScript code is the foundation used to create almost all of
+                these visualizations.</li>
+            <li><strong class="hl">D3.js:</strong> D3.js is the JavaScript library used to handle almost all tasks with
+                creating the visualizations. Techniques such as data binds, data joins, and transitions are used to
+                make them work.</li>
+            <li><strong class="hl">Data Visualization:</strong> These are all visualizations of data, employing data
+                visualization principles in varying degrees such as color, focus + context, expressiveness, and
+                effectiveness.</li>
+        </ul>
+    </div>
+    <div id="footer"></div>
+    <script>loadFooter()</script>
+</body>
+
+</html>
