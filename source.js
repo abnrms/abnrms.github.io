@@ -1,13 +1,37 @@
 function loadHeader() {
     let header = document.getElementById("header")
     header.innerHTML = `
-    <h1 id="page-title">Hamlet Taraz | <span class="hl">Software Developer</span></h1>
-    <div id="navbar">
+    <a href="index.html" id="page-title-wrapper"><h1 id="page-title">Hamlet Taraz | <span class="hl">Software Developer</span></h1></a>
+    <a href="index.html" id="page-title-short-wrapper"><h1 id="page-title-short">HamletTaraz<span class="hl">.dev</span></h1></a>
+    <div id="navbar" class="hide-mobile">
         <a class="navbar__button" href="index.html">Home</a>
         <a class="navbar__button" href="about.html">About</a>
         <a class="navbar__button" href="projects.html">Projects</a>
     </div>
+    <a id="hamburger-menu" class="hide-desktop svg-stroke" onclick="showHamburgerMenu()">
+        <svg id="hamburger-icon">
+            <path stroke-width="5px" stroke-linecap="round" d="M 10 10 L 40 10 M 10 25 L 40 25 M 10 40 L 40 40">
+        </svg>
+    </a>
+    <div id="hamburger-wrapper">
+        <div id="hamburger-background" onclick="hideHamburgerMenu()"></div>
+        <div id="hamburger-nav">
+            <a class="hamburger-nav__button" href="index.html">Home</a>
+            <a class="hamburger-nav__button" href="about.html">About</a>
+            <a class="hamburger-nav__button" href="projects.html">Projects</a>
+        </div>
+    </div>
     `
+}
+
+function showHamburgerMenu() {
+    let hamburger_overlay = document.getElementById("hamburger-wrapper")
+    hamburger_overlay.style["display"] = "block"
+}
+
+function hideHamburgerMenu() {
+    let hamburger_overlay = document.getElementById("hamburger-wrapper")
+    hamburger_overlay.style["display"] = "none"
 }
 
 function loadFooter() {
@@ -129,32 +153,38 @@ var projects = [
 
 /*
     <div class="project-wrapper">
-        <a class="project-card" href="[href]">
-            <img class="project-thumbnail" src="[path]" />
-            <div class="project-overlay">
-                <h2 class="project-title">[title]</h2>
-                <h3 class="project-language">[language]</h3>
+        <a class="project-content">
+            <div class="project-card" href="[href]">
+                <img class="project-thumbnail" src="[path]" />
+                <div class="project-overlay">
+                    <h2 class="project-title">[title]</h2>
+                    <h3 class="project-language">[language]</h3>
+                </div>
+            </div>
+            <p class="project-description">[description]</p>
+            <div class="project-tag-list">
+                <div class="project-tag">[tag]</div>
+                ...
             </div>
         </a>
-        <p class="project-description">[description]</p>
-        <div class="project-tag-list">
-            <div class="project-tag">[tag]</div>
-            ...
-        </div>
     </div>
 */
 
 function loadProjects() {
     let project_list = document.getElementById("project-list")
     for (project of projects) {
-        let wrapper = document.createElement("a")
+        let wrapper = document.createElement("div")
         wrapper.classList.add("project-wrapper")
-        wrapper.href = project.href
         project_list.appendChild(wrapper)
+        
+        let content = document.createElement("a")
+        content.classList.add("project-content")
+        content.href = project.href
+        wrapper.appendChild(content)
 
         let card = document.createElement("div")
         card.classList.add("project-card")
-        wrapper.appendChild(card)
+        content.appendChild(card)
 
         let thumbnail = document.createElement("img")
         thumbnail.classList.add("project-thumbnail")
@@ -179,11 +209,11 @@ function loadProjects() {
         let description = document.createElement("p")
         description.classList.add("project-description")
         description.innerText = project.description
-        wrapper.append(description)
+        content.append(description)
 
         let tag_list = document.createElement("div")
         tag_list.classList.add("project-tag-list")
-        wrapper.append(tag_list)
+        content.append(tag_list)
 
         for (tag_text of project.tags) {
             let tag = document.createElement("div")

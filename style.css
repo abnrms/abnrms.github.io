@@ -87,6 +87,15 @@ li::marker {
     color: var(--color-text-alt);
 }
 
+svg {
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* Header */
 
 #header {
@@ -99,13 +108,28 @@ li::marker {
     align-items: center;
     padding: 20px 50px;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
-#page-title {
+#page-title, #page-title-short {
     margin: 0px;
     text-wrap: nowrap;
-    overflow: hidden;
+    overflow: hidden; 
+}
+
+#page-title-short {
+    font-size: 20pt;
+}
+
+@media (min-width: 1000px) {
+    #page-title-short-wrapper {
+        display: none;
+    }
+}
+
+@media (max-width: 999px) {
+    #page-title-wrapper {
+        display: none;
+    }
 }
 
 #navbar {
@@ -116,15 +140,63 @@ li::marker {
     padding: 5px 10px;
 }
 
-.navbar__button, .footer-nav__button {
+.navbar__button, .footer-nav__button, .hamburger-nav__button {
     color: var(--color-text);
     text-decoration: none;
     transition: color 0.3s ease-out, transform 0.3s ease-out;
 }
 
-.navbar__button:hover, .footer-nav__button:hover {
+.navbar__button:hover, .footer-nav__button:hover, .hamburger-nav__button:hover {
     color: var(--color-text-alt);
     transform: scale(1.1);
+}
+
+#hamburger-menu {
+    cursor: pointer;
+}
+
+#hamburger-icon {
+    width: 50px;
+    height: 50px;
+}
+
+#hamburger-wrapper {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+#hamburger-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    background-color: #00000044;
+    z-index: 30;
+}
+
+#hamburger-nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    background-color: var(--color-background);
+    padding: 30px 10px;
+    z-index: 31;
+}
+
+.hamburger-nav__button {
+    font-size: 18pt;
+    padding: 10px 30px;
 }
 
 /* Footer */
@@ -217,6 +289,8 @@ li::marker {
 #profile {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     margin: 20px;
     gap: 20px;
 }
@@ -245,6 +319,7 @@ li::marker {
 
 #image-graduate {
     width: 250px;
+    max-width: 40%;
     float: right;
     margin: 10px 15px;
 }
@@ -257,11 +332,12 @@ li::marker {
     display: block;
     width: var(--content-width);
     margin: auto;
-    max-width: 100%;
+    max-width: 80%;
 }
 
 #gif-game-showcase {
     width: 150px;
+    max-width: 40%;
     float: right;
     margin-left: 15px;
     margin-bottom: 10px;
@@ -304,21 +380,37 @@ li::marker {
     justify-content: flex-start;
     margin: 20px auto;
     padding: 0px 20px;
-    gap: 10px;
 }
 
 .project-wrapper {
-    flex-basis: 30%;
+    flex: 0 0 33.3333%;
+}
+
+@media (max-width: 899px) {
+    .project-wrapper {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 619px) {
+    .project-wrapper {
+        flex-basis: 100%;
+    }
+}
+
+.project-content {
+    display: block;
     background-color: var(--color-background-invert);
     color: var(--color-text-invert);
     font-size: 10pt;
     border-radius: 10px;
-    padding: 10px;
     text-decoration: none;
+    padding: 10px;
+    margin: 5px;
     transition: transform 0.3s ease-out, background-color 0.3s ease-out;
 }
 
-.project-wrapper:hover {
+.project-content:hover {
     background-color: var(--color-background-invert-highlighted);
     transform: scale(1.02);
 }
@@ -375,7 +467,8 @@ li::marker {
 
 .project-page-media {
     display: block;
-    width: 80%;
+    width: 100%;
+    max-width: calc(.8 * var(--content-width));
     margin: auto;
 }
 
@@ -413,4 +506,37 @@ li::marker {
 .project-page-link-highlight:hover {
     background-color: var(--color-background-invert-bluer-highlighted);
     transform: scale(1.04);
+}
+
+/* Mobile Layout Changes */
+
+/* DESKTOP ONLY */
+@media (min-width: 768px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
+
+/* MOBILE ONLY */
+@media (max-width: 767px) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    #header {
+        padding: 20px 30px;
+    }
+
+    #title-container {
+        padding: 30px;
+    }
+
+    #title-container h1 {
+        font-size: 32pt;
+    }
+
+    #title-container h2 {
+        font-size: 24pt;
+        margin-top: 10px;
+    }
 }
